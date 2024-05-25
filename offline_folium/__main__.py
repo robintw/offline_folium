@@ -17,7 +17,7 @@ def download_url(url):
     output_path = os.path.join(dest_path, os.path.basename(url))
     print(f"Downloading {output_path}")
     contents = urlopen(url).read().decode("utf8")
-    with open(output_path, "w") as f:
+    with open(output_path, "w", encoding='utf-8') as f:
         f.write(contents)
 
 if __name__ == "__main__":

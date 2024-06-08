@@ -79,3 +79,18 @@ folium.Map.default_css = folium.folium._default_css
 
 folium.elements.JavascriptLink = JavascriptLink
 folium.elements.CssLink = CssLink
+
+
+import folium.plugins
+
+plugins = [folium.plugins.BeautifyIcon]
+
+for plugin in plugins:
+   plugin.default_js = [
+       (name, os.path.join(dest_path, os.path.basename(url)))
+       for (name, url) in plugin.default_js
+   ]
+   plugin.default_css = [
+       (name, os.path.join(dest_path, os.path.basename(url)))
+       for (name, url) in plugin.default_css
+   ]

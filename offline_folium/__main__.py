@@ -2,6 +2,7 @@ from urllib.request import urlopen
 import os
 
 import folium
+import folium.plugins
 from .paths import dest_path
 
 def download_all_files():
@@ -11,6 +12,12 @@ def download_all_files():
         download_url(js_url)
     for _, js_url in folium.folium._default_css:
         download_url(js_url)
+    for plugin in [folium.plugins.BeautifyIcon]:
+        for _, js_url in plugin.default_css:
+            download_url(js_url)
+        for _, js_url in plugin.default_js:
+            download_url(js_url)
+
 
 
 def download_url(url):

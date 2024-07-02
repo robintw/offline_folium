@@ -77,6 +77,17 @@ folium.folium._default_css = [
 folium.Map.default_js = folium.folium._default_js
 folium.Map.default_css = folium.folium._default_css
 
+# Use local resources for MarkerCluster
+folium.plugins.marker_cluster.MarkerCluster.default_css = [
+    (name, os.path.join(dest_path, os.path.basename(url)))
+    for (name, url) in folium.plugins.marker_cluster.MarkerCluster.default_css
+]
+
+folium.plugins.marker_cluster.MarkerCluster.default_js = [
+    (name, os.path.join(dest_path, os.path.basename(url)))
+    for (name, url) in folium.plugins.marker_cluster.MarkerCluster.default_js
+]
+
 folium.elements.JavascriptLink = JavascriptLink
 folium.elements.CssLink = CssLink
 

@@ -17,7 +17,11 @@ def download_all_files():
             download_url(js_url)
         for _, js_url in plugin.default_js:
             download_url(js_url)
-
+    # Get resources for MarkerCluster
+    for _, js_url in folium.plugins.marker_cluster.MarkerCluster.default_js:
+        download_url(js_url)
+    for _, js_url in folium.plugins.marker_cluster.MarkerCluster.default_css:
+        download_url(js_url)
 
 
 def download_url(url):

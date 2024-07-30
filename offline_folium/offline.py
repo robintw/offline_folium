@@ -10,7 +10,7 @@ class Link(Element):
     def get_code(self):
         """Opens the link and returns the response's content."""
         if self.code is None:
-            with open(self.url, "r") as f:
+            with open(self.url, "r", encoding="utf-8") as f:
                 contents = f.read()
             self.code = contents
         return self.code

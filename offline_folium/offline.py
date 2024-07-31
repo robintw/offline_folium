@@ -3,6 +3,7 @@ from branca.element import Figure, Element, CssLink
 from jinja2 import Template
 import os
 from .paths import dest_path
+from .plugin import get_local_plugins
 
 class Link(Element):
     """An abstract class for embedding a link in the HTML."""
@@ -83,7 +84,7 @@ folium.elements.CssLink = CssLink
 
 import folium.plugins
 
-plugins = [folium.plugins.BeautifyIcon]
+plugins = get_local_plugins()
 
 for plugin in plugins:
    plugin.default_js = [

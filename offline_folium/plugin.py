@@ -6,7 +6,7 @@ from .paths import dest_path
 dump_plugins_path = Path(dest_path) / "plugins.download"
 
 
-def handle_plugin_name(plugins_name: list[str] | None):
+def handle_plugin_name(plugins_name):
     if plugins_name is None:
         return []
 

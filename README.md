@@ -15,3 +15,10 @@ m = folium.Map()
 
 ## Why?
 By default, folium loads the required Javascript and CSS from CDNs over the internet. This doesn't work when you need to run folium offline. This project helps with that by allowing you to download the required resources when you have an internet connection (or during the application build/deploy process) and then use folium later on with those downloaded resources. The aim is to package it all up so that it is nice and simple for end-users (who may not be folium or Python specialists) to use.
+
+## PyInstaller Hint
+If using PyInstaller, add the local resources to the dist folder with this flag (adjust source path based on your os/venv)
+
+```
+--add-data venv\Lib\site-packages\offline_folium\local\*:offline_folium\local
+```

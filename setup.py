@@ -20,7 +20,6 @@ setup(
     },
     install_requires=[
         'folium',
-        'setuptools<81',
         'requests',
     ],
 )

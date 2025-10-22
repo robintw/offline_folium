@@ -1,3 +1,3 @@
-import pkg_resources
+from importlib.resources import files
 
-dest_path = pkg_resources.resource_filename('offline_folium', "local")
+dest_path = str(files('offline_folium').joinpath('local'))
